@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Home</title>
+    </head>
+    <body>
+        <h2>Dashboard</h2>
+        {% if user.is_authenticated %}
+        <iframe width="600" height="450" src="https://lookerstudio.google.com/embed/reporting/f41a5453-55c2-4b88-8150-f465101016ae/page/c9WgD" frameborder="0" style="border:0" allowfullscreen></iframe>
+        <a href="{% url 'logout' %}">Log Out</a>
+        {% else %}
+        <h3>You are not logged in</h3>
+        <a href="{% url 'login' %}">Log In</a>
+        {% endif %}
+    </body>
+</html>
